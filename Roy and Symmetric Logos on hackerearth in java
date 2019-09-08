@@ -1,0 +1,40 @@
+package arsheed;
+
+import java.util.Scanner;
+ class abcMatrix {
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+        int t=sc.nextInt();
+        while(t-->0) {
+        	
+        	int n=sc.nextInt();
+        	sc.nextLine();
+        	String s[]=new String[n];int v=0;
+        	for(int i=0;i<n;i++) {
+        		s[i]=sc.next();
+        		StringBuffer sb=new StringBuffer(s[i]);
+        		if(s[i].equals(sb.reverse().toString())) {
+        			
+        		}else {
+        			v++;
+        		}
+        	}
+        	for(int i=0,j=n-1;i<n/2;i++,j--) {
+        		if(s[i].equals(s[j])) {
+        			
+        		}
+        		else {
+        			v++;
+        		}
+        	}
+        	if(v>0) {
+        		System.out.println("NO");
+        	}else {
+        		System.out.println("YES");
+        	}
+        	
+        }
+	}
+
+}
