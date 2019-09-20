@@ -1,0 +1,41 @@
+
+import java.util.*;
+public class questack {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int q=sc.nextInt();
+        Queue <Integer> ss1=new LinkedList();
+        
+        while(q-->0)
+        {
+            int n=sc.nextInt();
+            if(n==1)
+            {
+                long x=sc.nextLong();
+                ss1.add((int) x);
+                
+            }
+            else if(n==2)
+            {
+                
+                ss1.remove(ss1.peek());
+                
+            }
+            else if(n==3)
+            {
+    
+                if(ss1.size()==0)
+                {
+                    System.out.print("");
+                }
+                else {
+                System.out.println(ss1.peek());}
+            }
+            
+            
+        }
+
+    }
+
+}
