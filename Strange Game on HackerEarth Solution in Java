@@ -1,0 +1,42 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
+public class TimeGame {
+
+	public static void main(String[] args)throws Exception {
+		// TODO Auto-generated method stub
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		int t=Integer.parseInt(br.readLine());
+	       while(t-->0) {
+	    	   
+	    	   String s1[]=br.readLine().split(" ");
+	    	   int n=Integer.parseInt(s1[0]);
+	    	   int k=Integer.parseInt(s1[1]);
+	    	   String s2[]=br.readLine().split(" ");
+	    	   String s3[]=br.readLine().split(" ");
+	    	   int a[]=new int[n];
+	    	   int b[]=new int[n];
+	    	   int time=0;
+	    	   for(int i=0;i<n;i++) {
+	    		   a[i]=Integer.parseInt(s2[i]);
+	    	   }
+	    	   int max=0;
+	    	   for(int i=0;i<n;i++) {
+	    		   b[i]=Integer.parseInt(s3[i]);
+	    		   if(b[i]>max) {
+	    			   max=b[i];
+	    		   }
+	    	   }
+	    	   max=max+1;
+	    	   for(int i=0;i<n;i++) {
+	    		   if(a[i]<max) {
+	    			   time=time+((max-a[i])*k);
+	    		   }
+	    	   }
+	    	   System.out.println(time);
+	       }
+
+	}
+
+}
