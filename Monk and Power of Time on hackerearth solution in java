@@ -1,0 +1,42 @@
+
+import java.util.*;
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+      
+        Scanner sc = new Scanner(System.in);
+         int n=sc.nextInt();
+        ArrayList<Integer> a=new ArrayList();
+         ArrayList<Integer> b=new ArrayList();
+         for(int i=0;i<n;i++){
+             a.add(sc.nextInt());
+         }
+         for(int i=0;i<n;i++){
+             b.add(sc.nextInt());
+         }
+         int c=0;int j=0;
+         for(int i=0;i<b.size();i++){
+             
+             if(a.get(j)==b.get(i)){
+                 a.remove(j);
+                 c++;
+             }
+             else{
+                 while(b.get(i)!=a.get(j)){
+                     c++;
+                     int w=a.get(j);
+                     a.remove(j);
+                     a.add(w);
+                 }
+                 if(a.get(j)==b.get(i)){
+                     a.remove(j);
+                     c++;
+                 }
+                 
+             }
+             
+             
+         }
+         System.out.println(c);
+    }
+}
