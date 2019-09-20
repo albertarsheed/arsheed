@@ -1,0 +1,107 @@
+package ALBERTARSHEED;
+
+import java.util.*;
+
+public class BTree {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		ArrayList<TreeBinary>ar=new ArrayList();
+		TreeBinary tt=new TreeBinary();
+		for(int i=0;i<10;i++) {
+		tt.insert(sc.nextInt());
+		}
+		tt.show();tt.min();tt.max();
+	}
+
+}
+class abc{
+	int data;
+	abc left;
+	abc right;
+	public abc(int data) {
+		this.data=data;
+	}
+	public void min() {
+		if(left==null) {
+			System.out.println("\n"+data);
+		}
+		if(left!=null) {
+			left.min();
+		}
+		
+	}
+	public void max() {
+		if(right==null) {
+			System.out.println(data);
+		}
+		if(right!=null) {
+			right.max();
+		}
+	}
+	public void show() {
+		if(left!=null) {
+			left.show();
+		}
+		System.out.print(data+"  ");
+		if(right!=null) {
+			right.show();
+		}
+	}
+	public void insert(int value) {
+		if(value<data) {
+			if(left==null) {
+				left=new abc(value);
+			}
+			else {
+				left.insert(value);
+			}
+		}
+		else {
+			if(right==null) {
+				right=new abc(value);
+			}
+			else {
+				right.insert(value);
+			}
+		}
+	}
+	
+}
+
+
+class TreeBinary{
+	abc root;
+	public void insert(int value) {
+		if(root==null) {
+			root=new abc(value);
+		}
+		else {
+			root.insert(value);
+		}
+	}
+	public void show() {
+		if(root!=null) {
+			root.show();
+		}
+	}
+	
+	public void min() {
+		
+		if(root!=null) {
+			root.min();
+		}
+		
+	}
+public void max() {
+		
+		if(root!=null) {
+			root.max();
+		}
+		
+	}
+}
+
+
+
