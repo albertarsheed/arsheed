@@ -1,0 +1,28 @@
+
+import java.io.*;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class cloudinterference {
+
+    public static void main(String[] args) {
+     
+        Scanner sc=new Scanner (System.in);
+        int n=sc.nextInt();
+        while(n-->0){
+            String s=sc.next();
+            String t="^[_.]\\d+([a-zA-Z]*_?)";
+            Pattern p=Pattern.compile(t);
+            Matcher m=p.matcher(s);
+            if(m.matches()){
+                System.out.println("VALID");
+            }
+            else{
+                 System.out.println("INVALID");
+
+            }
+        }
+    }
+}
+
