@@ -1,0 +1,30 @@
+# arsheed
+import java.io.*;
+
+public class Problem {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bf=new BufferedReader(new InputStreamReader(System.in));
+            String s=bf.readLine();
+           String s1=bf.readLine().trim();
+           String s2=bf.readLine().trim();
+            System.out.println(DistanceTracer(s,s1,s2));
+    }
+    static int DistanceTracer(String s,String r1,String r2) {
+    	int t=0;
+    	int min=Integer.MAX_VALUE;
+    	String g[]=s.split("\\s+");
+    	for(int i=0;i<g.length;i++) {
+    		if(g[i].equals(r1)) {
+    			t=i;
+    		}
+    		if(g[i].equals(r2) && t>0) {
+    			if(min>i-t) {
+    			min=i-t-1;
+    		}}
+    	}
+    	
+    	
+    	return min;
+    }
+}
+
